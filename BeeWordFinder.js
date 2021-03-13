@@ -1441,6 +1441,7 @@ dictionary = ['a',
 'agate',
 'agates',
 'agatha',
+'agave',
 'age',
 'aged',
 'ageism',
@@ -22048,6 +22049,7 @@ dictionary = ['a',
 'eaton',
 'eats',
 'eau',
+'eave',
 'eaves',
 'eavesdrop',
 'eavesdropped',
@@ -29084,6 +29086,7 @@ dictionary = ['a',
 'gaussian',
 'gauze',
 'gauzy',
+'gavage',
 'gave',
 'gavel',
 'gavelers',
@@ -77949,12 +77952,11 @@ else {
 //console.log('Possible Words in dictionary bef splice = ' + dictionary);
 
 dictionary.splice(m,1);
-
+m = -1;
 //console.log('Possible Words in dictionary aft splice = ' + dictionary);
 gw = 'BW';
-if(m !== 0) {
-   m = m - 1;
-}
+
+//if(m !== 0) {m = m - 1;}
 //console.log('Finished n loop');
 
 } // End else
