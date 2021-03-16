@@ -1,21 +1,28 @@
 //Bee Word Finder 
 console.log('Start js ');
 
-
-//getbeeltrs();
-
-
 function getbeeltrs() {
+
 var beeltrs=document.getElementById("bltrs").value;
 
-if(beeltrs == "")
-return;
+var beemcontain=document.getElementById("bcltr").value;
+
+if(beeltrs == "") {
+    alert('Oops, you forgot to enter Bee Letters');
+    return;
+    }
+    
+if(beemcontain == "") {
+    alert('Oops, you forgot to enter a Must Contain Letter');
+    return;
+    }
+
 
 console.log('Letters = ' + beeltrs);
 letters = beeltrs.toLowerCase();
 console.log('Letters LC = ' + letters);
 
-var beemcontain=document.getElementById("bcltr").value;
+
 console.log('Must Contain = ' + beemcontain);
 mustContain = beemcontain.toLowerCase();
 console.log('Must Contain LC = ' + mustContain);
@@ -77969,12 +77976,81 @@ console.log('Possible Bee Words with Specific letter = ' + mustContain + ' = ' +
 
 console.log('Number of Bee Words = ' + dictionary.length);
 
-//console.log('Bee Words = ' + dictionary);
+//FIND PANGRAM
+var pwords = [];
+var pwordcnt = 0;
+var tempdltr = '';
+var templttr = '';
+var plgth = 0;
+var pwordpts = 0;
 
-//document.getElementById("BeeWords").innerHTML = dictionary;
+for (i = 0; i < dictionary.length; i++) {
+   console.log('i = ' + i);
+   dictword = dictionary[i];
+   pcnt = 0;
+   dictwdlgt = dictword.length;
+  if(dictwdlgt >= 7) {
+    console.log('dictword = ' + dictword);
 
+    for (j = 0; j < letters.length; j++) {
+       console.log('j = ' + j);
+       templttr = letters.charAt(j);
 
-document.getElementById("bwords").value = dictionary;
+      for(k = 0; k < dictword.length; k++) {
+       console.log('k = ' + k);
+       tempdltr= dictword.charAt(k);
+      
+      console.log('templttr = ' + templttr);
+      console.log('tempdltr = ' + tempdltr);
+
+        if(templttr == tempdltr) {
+        pcnt = pcnt + 1;
+        console.log('pcnt = ' + pcnt);
+        break;
+         } // if = letters
+       } // for k loop
+     } // for j loop
+   } // if > 7 
+  if(pcnt >= 7) {
+    pwords.push(dictword);
+    plgth = dictword.length;
+    pwordcnt = pwordcnt + 1;
+    console.log('pwordcnt = ' + pwordcnt);
+    pwordpts = pwordpts + plgth + 7;
+    console.log('pwords = ' + pwords);
+    console.log('pwordpts = ' + pwordpts);
+   } // ck for p word
+} // for i loop 
+
+        
+//DICTIONARY OUTPUT TO TEXTAREA WO SPLITIMG WORD A END OF LINE
+//ALSO COUNT BEE POINTS
+var txtwdlin="";
+var coma=", ";
+var beepts=0;
+
+for(t=0; t < dictionary.length; t++) {
+  dictword = dictionary[t];
+  if(dictword.length <= 4) {
+    beepts = beepts + 1;
+   }
+   else {
+    beepts = beepts + dictword.length;
+   }
+
+  txtwdlin = txtwdlin.concat (dictword, coma);
+  console.log('dictword = ' + dictword);
+  console.log('txtwdlin in if = ' + txtwdlin);
+  console.log('txtwdlin in else = ' + txtwdlin);
+  document.getElementById("bwords").value = txtwdlin
+} // End for
+  
+beepts = beepts + pwordpts;
+//document.getElementById("bwords").value = dictionary;
 
 document.getElementById("nofwrds").value = dictionary.length;
+
+document.getElementById("pbeepts").value = beepts;
+
+document.getElementById("pwrds").value = pwords;
 }

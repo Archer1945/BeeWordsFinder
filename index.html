@@ -13,8 +13,26 @@ body
     background-color: rgb(0, 255, 255);
     background-attachment: fixed;
     background-size: cover;
+
+  #div1 {
+   width:33%;
+   height:50%;
+   float:left;
   }
 
+  #div2 {
+   width:33%;
+   height:50%;
+   float:right;
+  }
+
+  #div3{
+   width:33%;
+   height:50%;
+   float:right;
+  }
+
+  }
 </style> 
 
 
@@ -33,13 +51,29 @@ body
 
 
 <form>
-<br><br><br><br>
-<label for="beewords">Bee Words:</label><br>
-<textarea id="bwords" rows="10" cols="60" value=""></textarea>
 <br><br>
-<label for="nobwords">Number of Bee Words:</label><br>
-<input type="text" id="nofwrds" value=""><br><br>
+<label for="beewords">Bee Words:</label><br>
+<textarea id="bwords" rows="10" cols="100" value=""></textarea>
+<br><br>
 </form>
+
+
+<form>
+  <div id=div1
+  <label id="text1" for="nobwords">Number of Bee Words:</label><br>
+  <input type="text" id="nofwrds" value="">
+  </div>
+  
+  <div id=div2
+  <label id="text2" for="beepoints">Possible Bee Points:</label><br>
+  <input type="text" id="pbeepts" value="">
+  </div>
+
+  <div id=div3
+  <label id="text3" for="pbeewrds">Pan Words:</label><br>
+  <textarea id="pwrds" rows="2" cols="20" value=""></textarea>
+  </div>
+  </form>
 
 <p> Click the button to print the current page.</p>
 <button onclick="window.print()";>Print this page</button>
