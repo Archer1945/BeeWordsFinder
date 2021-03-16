@@ -13,26 +13,27 @@ body
     background-color: rgb(0, 255, 255);
     background-attachment: fixed;
     background-size: cover;
+    
+  font-family: Arial; color: black; font-size: 16px; font-weight: bold;
 
   #div1 {
-   width:33%;
+   width:33.33%;
    height:50%;
    float:left;
   }
 
   #div2 {
-   width:33%;
+   width:33.33%;
    height:50%;
    float:right;
   }
 
   #div3{
-   width:33%;
+   width:33.33%;
    height:50%;
    float:right;
   }
 
-  }
 </style> 
 
 
@@ -40,10 +41,10 @@ body
 
 <form>
 <label for="beeltrs">Bee Letters:</label><br>
-<input type="text" id="bltrs" value=""><br><br>
+<input type="text" id="bltrs" style="font-size:16px" value=""><br><br>
 <label for="beemc">Must Contain Letter:</label><br>
-<input type="text" id="bcltr" name="bcltr" value=""><br><br>
-<input type="button" value="Click to Find Bee Words" onclick="getbeeltrs()"/>
+<input type="text" id="bcltr" name="bcltr" style="font-size:16px" value=""><br><br>
+<input type="button" style="font-size:16px" value="Click to Find Bee Words" onclick="getbeeltrs()"/>
 </form>
 
 
@@ -53,25 +54,24 @@ body
 <form>
 <br><br>
 <label for="beewords">Bee Words:</label><br>
-<textarea id="bwords" rows="10" cols="100" value=""></textarea>
+<textarea id="bwords" rows="10" cols="70" style="font-size:16px" value=""></textarea>
 <br><br>
 </form>
-
 
 <form>
   <div id=div1
   <label id="text1" for="nobwords">Number of Bee Words:</label><br>
-  <input type="text" id="nofwrds" value="">
+  <input type="text" id="nofwrds" style="font-size:16px" value="">
   </div>
-  
+  <br>
   <div id=div2
   <label id="text2" for="beepoints">Possible Bee Points:</label><br>
-  <input type="text" id="pbeepts" value="">
+  <input type="text" id="pbeepts" style="font-size:16px" value="">
   </div>
-
+  <br>
   <div id=div3
   <label id="text3" for="pbeewrds">Pan Words:</label><br>
-  <textarea id="pwrds" rows="2" cols="20" value=""></textarea>
+  <textarea id="pwrds" rows="2" cols="20" style="font-size:16px" value=""></textarea>
   </div>
   </form>
 
